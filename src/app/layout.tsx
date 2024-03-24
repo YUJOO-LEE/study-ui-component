@@ -1,3 +1,4 @@
+import { Gnb } from '@/app/Gnb';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={inter.className}>
+        <Gnb />
        <main>
          {children}
        </main>
