@@ -1,11 +1,15 @@
-const ItemPage = ({ params: { item }}: { params: { item: string[]} }) => {
-  const path = ['', ...item].join('/');
+'use client';
 
-  return (
-    <div>
-      item page: {path}
-    </div>
-  );
+import { isParentRoute, ROUTE_PATH, routes } from '@/routes';
+
+const ItemPage = ({ params: { item }}: { params: { item: string[]} }) => {
+  const path = ['', ...item].join('/') as ROUTE_PATH;
+  const route = routes[path];
+
+  if (!route?.children || isParentRoute(route)) return null;
+  const { children: Component } = route;
+
+  return (<Component />);
 };
 
 export default ItemPage;
