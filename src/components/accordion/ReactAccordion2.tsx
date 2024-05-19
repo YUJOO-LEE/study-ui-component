@@ -13,20 +13,18 @@ type ItemProps = {
 const Item = ({ current, id, title, description, onClick }: ItemProps) => {
 
   return (
-    <li className={cx('item', { current })}>
+    <li className={cx('item', 'item2', { current })}>
       <div className={cx('tab')} onClick={onClick}>
         {title}
       </div>
-      {current && (
-        <div className={cx('description')}>
-          {description}
-        </div>
-      )}
+      <div className={cx('description')}>
+        {description}
+      </div>
     </li>
   );
 };
 
-export const ReactComponent = () => {
+export const ReactAccordion2 = () => {
   const [currentId, setCurrentId] = useState<string | null>(data[0].id);
 
   const toggleItem = (id: string) => () => {
@@ -35,7 +33,7 @@ export const ReactComponent = () => {
 
   return (
     <div>
-      <h3>#1. React</h3>
+      <h3>#2. React - css control</h3>
       <ul className={cx('container')}>
         {data.map((item) => (
           <Item

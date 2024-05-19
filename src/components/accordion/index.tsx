@@ -1,11 +1,13 @@
 import cx from '@/components/accordion/cx';
-import { ReactComponent } from '@/components/accordion/ReactComponent';
+import { ReactAccordion1 } from '@/components/accordion/ReactAccordion1';
+import { ReactAccordion2 } from '@/components/accordion/ReactAccordion2';
 
 const Accordions = () => {
   return (
     <div className={cx('accordions')}>
       <h2>아코디언</h2>
-      <ReactComponent />
+      <ReactAccordion1 />
+      <ReactAccordion2 />
     </div>
   );
 };
