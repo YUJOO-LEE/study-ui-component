@@ -1,9 +1,10 @@
+import Accordions from '@/components/accordion';
 import Test1 from '@/components/test1';
 import Test2React from '@/components/test2/react';
 import Test2Vanilla from '@/components/test2/vanilla';
 import React from 'react';
 
-const routePaths = ['/', '/test1', '/test2', '/test2/vanilla', '/test2/react'] as const;
+const routePaths = ['/', '/test1', '/test2', '/test2/vanilla', '/test2/react', '/accordion'] as const;
 export type ROUTE_PATH = (typeof routePaths)[number];
 
 type BaseRoute = {
@@ -27,7 +28,7 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     key: '/',
     link: '/',
     label: 'root',
-    children: ['/test1', '/test2'],
+    children: ['/test1', '/test2', '/accordion'],
   },
   '/test1': {
     key: '/test1',
@@ -52,6 +53,12 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     link: '/test2/react',
     label: 'React',
     children: Test2React,
+  },
+  '/accordion': {
+    key: '/accordion',
+    link: '/accordion',
+    label: 'Accordion',
+    children: Accordions,
   },
 };
 
